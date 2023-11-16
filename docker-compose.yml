@@ -1,0 +1,14 @@
+version: "3"
+services:
+  huseyinmongodb:
+    image: mongo:latest
+    container_name: "huseyinmongodb"
+    ports:
+      - 27017:27017
+  spring-boot-mongodb:
+    image: spring-boot-mongodb:1.0
+    container_name: spring-boot-mongodb
+    ports:
+      - 8080:8080
+    links:
+      - huseyinmongodb
